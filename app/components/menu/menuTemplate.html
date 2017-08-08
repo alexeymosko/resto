@@ -1,0 +1,14 @@
+<div class = menu-container>
+	<h2 class = "menu-headline"><span class = "menu-headline__text">The Menu</span></h2>
+	<ul class = "menu-items">
+		<li class = "menu-item" ng-repeat = "item in menuCtrl.dishes track by $index">
+			<div class = "menu-item-description">
+				<div class = "menu-item-description__name">{{item.description.name}}</div>
+				<div class = "menu-item-description__ingredients">{{item.description.ingredients}}</div>
+			</div>
+			<div class = "menu-item__line"></div>
+			<div class = "menu-item__price">{{item.price}}</div>
+		</li>
+	</ul>
+	<button class = "menu-loadmore"><span>load more</span></button>
+</div>

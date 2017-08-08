@@ -1,0 +1,17 @@
+<div class = "featured-container">
+	<h2 class = "featured-headline">Featured dishes</h2>
+	<div class = "featured-list">
+		<div class = "featured-item" ng-repeat = "item in featuredCtrl.dishes track by $index">
+			<a ui-sref="review({id: $index})">
+				<img class = "featured-item-pic" ng-src = "{{item.pic}}">
+			</a>
+			<div class = "featured-item-info">
+				<a ui-sref="review({id: $index})">
+					<div class = "featured-item-info__name">{{item.description.name}}</div>
+				</a>
+				<div class = "featured-item-info__price">{{item.description.price}}</div>
+				<rating stars="{{item.avgRank}}"></rating>
+			</div>
+		</div>
+	</div>
+</div>

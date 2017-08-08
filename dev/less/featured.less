@@ -1,0 +1,23 @@
+@import "mixins.less";
+@import "variables.less";
+.featured {
+	&-container {
+		.container;
+	}
+	&-headline {
+		.cleartitle;
+		.boldfont;
+		text-transform: uppercase;
+		color: #343434;
+	}
+
+	&-list {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&-item-info {
+		.mainfont;
+	}
+}
+

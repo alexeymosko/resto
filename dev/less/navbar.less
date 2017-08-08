@@ -1,0 +1,45 @@
+@import "mixins.less";
+@import "variables.less";
+.nav {
+	position: fixed;
+	background-color: #fff;
+	z-index: 20;
+	top: 0;
+	padding: 5px 40px;
+	max-width: ~"calc(100% - 80px)";
+}
+
+
+.navbar-container {
+	.container;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	display: block;
+	width: 81px;
+	height: 29px;
+	background-image: url("../images/logo.jpg");
+	background-repeat: no-repeat;
+}
+
+.top-menu {
+	display: flex;
+	align-items: center;
+	list-style: none;
+	.top-menu__item {	
+		position: relative;
+		&:not(:nth-of-type(1)) {
+			margin-left: 10px;
+		}
+	}
+}
+
+.top-menu__link {
+	text-decoration: none;
+	.mainfont(14px);
+	color: @main-color;
+}
+

@@ -1,0 +1,15 @@
+<div class = "header">
+	<div class = "header-container">
+		<h1 class = "header-headline">Yummies and more...</h1>
+		<h3 class = "header-subtitle">Your choice of fabulous food</h3>
+		<div class = "header-buttons" ng-if = "!firebaseUser">
+		<button class = "header-button" ng-click="auth.$signInWithPopup('google')">Sign in with Google</button>
+		<button class = "header-button" ng-click="auth.$signInWithPopup('facebook')">Sign in with Facebook</button>
+		</div>
+		<div class = "header-buttons" ng-if = "firebaseUser">
+		<button class = "header-button" ng-click="auth.$signOut()">Logout</button>
+		</div>
+	</div>
+</div>
+<menu-list></menu-list>
+<featured></featured>

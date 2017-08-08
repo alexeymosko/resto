@@ -1,0 +1,8 @@
+<div class = news-container>
+	<div class = "news-item" ng-repeat = "item in newsCtrl.news track by $index" >
+		<h2 class = "news-item__headline">{{item.headline}}</h2>
+		<img class = "news-item__pic" ng-src = "{{item.pic}}">
+		<p class = "news-item__text">{{item.text}}</p>
+		<a class = "news-item__link" ui-sref="newsfull({id: $index})">Read more</a>
+	</div>
+</div>

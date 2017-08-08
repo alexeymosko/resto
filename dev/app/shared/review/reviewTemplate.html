@@ -1,0 +1,11 @@
+<article class = "review">
+		<h2 class = "review__headline">{{rewCtrl.data.description.name}}</h2>
+		<img class = "review__pic" ng-src = "{{rewCtrl.data.pic}}">
+		<p class = "review__ingredients">{{rewCtrl.data.description.ingredients}}</p>
+		<div class = "review__price">{{rewCtrl.data.price}}</div>		
+		<div class = "review-reviews" ng-repeat = "item in rewCtrl.data.reviews track by $index">
+			<rating stars="{{item.rank}}"></rating>
+			<p class = "review-reviews__text">{{item.review}}</p>
+		</div>
+</article>
+<form-block></form-block>
