@@ -2,6 +2,7 @@
 @import "variables.less";
 
 .menu {
+	z-index: 1;
 	&-container {
 		.container;
 	}
@@ -10,7 +11,7 @@
 		.boldfont;
 		width: 150px;
 		height: 70px;
-		margin-left: auto;
+		margin-left: auto; 
 		margin-right: auto;
 		background-color: @menu-color;
 		color: #ffffff;
@@ -19,7 +20,7 @@
 		justify-content: center;
 		align-items: center;
 		&__text {
-			margin-top: -10px;
+			margin-top: -20px;
 		}
 		&::after {
 			content: '';
@@ -43,14 +44,15 @@
 
 	&-item {
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 		align-items: center;
-		width: 47%;
+		width: 45%;
 		margin-top: 30px;
 		margin-bottom: 30px;
 		&-description {
+			width: 65%;
 			flex-shrink: 0;
-			margin-right: 30px;
+			margin-right: 20px;
 			max-width: 350px;
 			&__name {
 				.boldfont;
@@ -63,29 +65,22 @@
 			width: 215px;
 			height: 1px;
 			background-color: #e3e1e1;
-			flex-grow: 1;
 		}
 		&__price {
 			.mainfont;
-			flex-shrink: 0;
-			margin-left: 30px;
+			flex-shrink: 1;
+			margin-left: 20px;
+			margin-right: 30px;
 		}
 	}
 	
 	&-loadmore {
-		margin-left: auto;
-		margin-right: auto;
-		width: 132px;
-		height: 32px;
-		background-color: #ffffff;
-		border: 1px solid #d7d5d5;
-		.mainfont(14px);
-		color: #e3e1e1;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		.button;
 	}
+
 }
+
+
 
 @media (max-width: 700px) {
 	.menu-item {

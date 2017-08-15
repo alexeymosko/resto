@@ -1,26 +1,33 @@
-<div class = "review-ready">		
-	<div>
-		<h2 class = "review-ready__headline">{{formCtrl.reviewReady.headline}}</h2>
-		<rating stars="{{formCtrl.reviewReady.rank}}"></rating>
-		<p class = "review-ready__author">{{formCtrl.reviewReady.author}}</p>
-		<p class = "review-ready__text">{{formCtrl.reviewReady.text}}</p>
+<div class = "review-add"> 
+	<h2 class = "review-add-title">Add your review</h2>
+	<div class = "review-add-container">
+		<form name = "review-form" class = "review-form" ng-submit = "formCtrl.submitForm()">
+			<p class = "review-form__fieldname">Your name</p>
+			<input type = "text" class = "review-form__username" ng-model = "formCtrl.reviewReady.author">
+			<p class = "review-form__fieldname">Review headline</p>
+			<input type = "text" class = "review-form__headline" ng-model = "formCtrl.reviewReady.headline">
+			<p class = "review-form__fieldname">Your review</p>
+			<textarea class = "review-form__text" ng-model = "formCtrl.reviewReady.text"></textarea>
+			<p class = "review-form__fieldname">Please rate the dish</p>
+			<div class = "review-form__rating">
+			<span class = "rating-star" ng-class = "{'rating-star--active' : formCtrl.reviewReady.rank > 0}" ng-click = "formCtrl.setRank(1)"></span>
+			<span class = "rating-star" ng-class = "{'rating-star--active' : formCtrl.reviewReady.rank > 1}" ng-click = "formCtrl.setRank(2)"></span>
+			<span class = "rating-star" ng-class = "{'rating-star--active' : formCtrl.reviewReady.rank > 2}" ng-click = "formCtrl.setRank(3)"></span>
+			<span class = "rating-star" ng-class = "{'rating-star--active' : formCtrl.reviewReady.rank > 3}" ng-click = "formCtrl.setRank(4)"></span>
+			<span class = "rating-star" ng-class = "{'rating-star--active' : formCtrl.reviewReady.rank > 4}" ng-click = "formCtrl.setRank(5)"></span>
+		</div>
+			<input type = "hidden" value = "" ng-model = "formCtrl.reviewReady.rank">
+			<button type = "submit" class = "review-form__button">Submit your review</button>
+		</form>
+
+		<div class = "review-ready">	
+				<h2 class = "review-ready__headline">{{formCtrl.reviewReady.headline}}</h2>
+				<rating stars="{{formCtrl.reviewReady.rank}}"></rating>
+				<p class = "review-ready__author">{{formCtrl.reviewReady.author}}</p>
+				<p class = "review-ready__text">{{formCtrl.reviewReady.text}}</p>
+		</div>
+		
 	</div>
 </div>
-<form name = "review-form" class = "review-form" ng-submit = "formCtrl.submitForm()">
-	<p>Your name</p>
-	<input type = "text" class = "review-form__username" ng-model = "formCtrl.reviewReady.author">
-	<p>Review headline</p>
-	<input type = "text" class = "review-form__headline" ng-model = "formCtrl.reviewReady.headline">
-	<p>Your review</p>
-	<textarea class = "review-form__text" ng-model = "formCtrl.reviewReady.text"></textarea>
-	<p>Please rate the dish</p>
-	<div class = "rating">
-	<span class = "rating-star" ng-class = "{'rating-star--active' : formCtrl.reviewReady.rank > 0}" ng-click = "formCtrl.setRank(1)"></span>
-	<span class = "rating-star" ng-class = "{'rating-star--active' : formCtrl.reviewReady.rank > 1}" ng-click = "formCtrl.setRank(2)"></span>
-	<span class = "rating-star" ng-class = "{'rating-star--active' : formCtrl.reviewReady.rank > 2}" ng-click = "formCtrl.setRank(3)"></span>
-	<span class = "rating-star" ng-class = "{'rating-star--active' : formCtrl.reviewReady.rank > 3}" ng-click = "formCtrl.setRank(4)"></span>
-	<span class = "rating-star" ng-class = "{'rating-star--active' : formCtrl.reviewReady.rank > 4}" ng-click = "formCtrl.setRank(5)"></span>
-</div>
-	<input type = "hidden" value = "" ng-model = "formCtrl.reviewReady.rank">
-	<button type = "submit">Submit your review</button>
-</form>
+
+

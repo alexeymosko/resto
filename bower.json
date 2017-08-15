@@ -1,0 +1,23 @@
+{
+  "name": "resto",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "alexeymosko <alexeymosko@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/alexeymosko/resto",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "cloudinary_ng": "1.x"
+  },
+  "devDependencies": {
+    "cloudinary_ng": "1.x"
+  }
+}

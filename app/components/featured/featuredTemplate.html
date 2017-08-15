@@ -6,10 +6,9 @@
 				<img class = "featured-item-pic" ng-src = "{{item.pic}}">
 			</a>
 			<div class = "featured-item-info">
-				<a ui-sref="review({id: $index})">
-					<div class = "featured-item-info__name">{{item.description.name}}</div>
+				<a class = "featured-item-info__link"ui-sref="review({id: $index})">
+					<p class = "featured-item-info__name">{{item.description.name}}</p>
 				</a>
-				<div class = "featured-item-info__price">{{item.description.price}}</div>
 				<rating stars="{{item.avgRank}}"></rating>
 			</div>
 		</div>

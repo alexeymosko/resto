@@ -1,0 +1,29 @@
+<div class = "voice-add">
+  <h2 class = "voice-add-title">What do you think of resto? Your voice matters!</h2>
+  <div class = "voice-add-container">
+    <form name = "voice-form" class = "voice-form" ng-submit = "voiceformCtrl.submitForm()">
+      <p class = "voice-form__fieldname">Your name</p>
+      <input type = "text" class = "voice-form__username" ng-model = "voiceformCtrl.voiceReady.name">
+      <p class = "voice-form__fieldname">Review headline</p>
+      <input type = "text" class = "voice-form__headline" ng-model = "voiceformCtrl.voiceReady.headline">
+      <p class = "voice-form__fieldname">Your review</p>
+      <textarea class = "voice-form__text" ng-model = "voiceformCtrl.voiceReady.text"></textarea>
+      <p class = "voice-form__fieldname">Please rate Resto</p>
+      <div class = "voice-form__rating">
+      <span class = "rating-star" ng-class = "{'rating-star--active' : voiceformCtrl.voiceReady.rank > 0}" ng-click = "voiceformCtrl.setRank(1)"></span>
+      <span class = "rating-star" ng-class = "{'rating-star--active' : voiceformCtrl.voiceReady.rank > 1}" ng-click = "voiceformCtrl.setRank(2)"></span>
+      <span class = "rating-star" ng-class = "{'rating-star--active' : voiceformCtrl.voiceReady.rank > 2}" ng-click = "voiceformCtrl.setRank(3)"></span>
+      <span class = "rating-star" ng-class = "{'rating-star--active' : voiceformCtrl.voiceReady.rank > 3}" ng-click = "voiceformCtrl.setRank(4)"></span>
+      <span class = "rating-star" ng-class = "{'rating-star--active' : voiceformCtrl.voiceReady.rank > 4}" ng-click = "voiceformCtrl.setRank(5)"></span>
+    </div>
+      <input type = "hidden" value = "" ng-model = "voiceformCtrl.voiceReady.rank">
+      <button type = "submit" class = "voice-form__button">Submit your review</button>
+    </form>
+    <div class = "voice-ready">    
+        <h2 class = "voice-ready__headline">{{voiceformCtrl.voiceReady.headline}}</h2>
+        <rating stars="{{voiceformCtrl.voiceReady.rank}}"></rating>
+        <p class = "voice-ready__name">{{voiceformCtrl.voiceReady.name}}</p>
+        <p class = "review-ready__text">{{voiceformCtrl.voiceReady.text}}</p>
+    </div>
+  </div>
+</div>

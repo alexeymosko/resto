@@ -7,14 +7,19 @@ var app = angular.module('resto');
         var self = this;
         this.reviewReady = {
           rank: 0,
+
         }
         this.setRank = function(num){
           self.reviewReady.rank = num;
         }
         this.submitForm = function(){
-          $scope.$emit('addReview', self.reviewReady)
+          $scope.$emit('addReview', self.reviewReady);
+          self.reviewReady = {
+          rank: 0,
+          }
         }
       }],
       controllerAs: "formCtrl"
   	}
   });
+  

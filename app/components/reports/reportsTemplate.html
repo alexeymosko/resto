@@ -1,0 +1,11 @@
+<h2 class = "reports-title">Guests' voices</h2>
+<div class = reports-container>
+	<div class = "reports-item" ng-repeat = "item in reportsCtrl.reports track by $index" >
+		<h3 class = "reports-item__headline">{{item.headline}}</h3>
+		<p class = "reports-item__name">{{item.name}}</p>
+		<rating stars="{{item.rank}}"></rating>
+		<p class = "reports-item__text">{{item.text}}</p>
+		<button class = "reports-item__button" ui-sref="voice({id: $index})"><span>Read full review</span></a>
+	</div>
+	<voiceform></voiceform>
+</div>

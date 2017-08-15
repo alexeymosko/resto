@@ -1,11 +1,21 @@
-<article class = "review">
-		<h2 class = "review__headline">{{rewCtrl.data.description.name}}</h2>
-		<img class = "review__pic" ng-src = "{{rewCtrl.data.pic}}">
-		<p class = "review__ingredients">{{rewCtrl.data.description.ingredients}}</p>
-		<div class = "review__price">{{rewCtrl.data.price}}</div>		
-		<div class = "review-reviews" ng-repeat = "item in rewCtrl.data.reviews track by $index">
-			<rating stars="{{item.rank}}"></rating>
-			<p class = "review-reviews__text">{{item.review}}</p>
+<article class = "review-container">
+		<div class = "review-head">
+			<img class = "review-head__pic" ng-src = "{{rewCtrl.data.pic}}">
+			<div class = "review-head-descr">
+				<h2 class = "review-head-descr__headline">{{rewCtrl.data.description.name}}</h2>
+				<p class = "review-head-descr__ingredients">{{rewCtrl.data.description.ingredients}}</p>
+				<p class = "review-head-descr__price">Price: {{rewCtrl.data.price}}</p>
+			</div>
+		</div>
+		<h3 class = "review-title"><span class = "review-title__text">Dish reviews</span></h3>
+		<div class = review-list>
+			<div class = "review-list-item" ng-repeat = "item in rewCtrl.data.reviews track by $index">
+				<h3 class = "review-list__headline">{{item.headline}}</h3>
+				<p class = "review-list__author">{{item.author}}</p>
+				<rating stars="{{item.rank}}" class = "review-list__rating"></rating>
+				<p class = "review-list__text">{{item.review}}</p>
+			</div>
 		</div>
 </article>
-<form-block></form-block>
+<form-block ng-if = "rewCtrl.user"></form-block>
+

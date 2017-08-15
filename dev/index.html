@@ -18,8 +18,11 @@
 	<link rel="stylesheet/less" type="text/css" href="less/news.less">
 	<link rel="stylesheet/less" type="text/css" href="less/newsfull.less">
 	<link rel="stylesheet/less" type="text/css" href="less/rating.less">
+	<link rel="stylesheet/less" type="text/css" href="less/reports.less">
 	<link rel="stylesheet/less" type="text/css" href="less/review.less">
 	<link rel="stylesheet/less" type="text/css" href="less/variables.less">
+	<link rel="stylesheet/less" type="text/css" href="less/voice.less">
+	<link rel="stylesheet/less" type="text/css" href="less/voiceform.less">
 	<!-- endinject -->
 	<!-- inject:css -->
 	<!-- endinject -->
@@ -31,8 +34,11 @@
 	</div>
 	<footer-block></footer-block>
 	<!-- inject:vendor:js -->
+	<script src="vendor/lodash.min.js"></script>
 	<script src="vendor/less.min.js"></script>
+	<script src="vendor/cloudinary-core.min.js"></script>
 	<script src="vendor/angular.min.js"></script>
+	<script src="vendor/angular.cloudinary.js"></script>
 	<script src="vendor/angular-ui-router.min.js"></script>
 	<!-- endinject -->
 	<!-- Firebase -->
@@ -41,12 +47,17 @@
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
 	<!-- inject:app:js -->
 	<script src="app/app.js"></script>
+	<script src="app/shared/voice/voiceDirective.js"></script>
 	<script src="app/shared/review/reviewDirective.js"></script>
 	<script src="app/shared/rating/ratingDirective.js"></script>
-	<script src="app/shared/footer/footerDirective.js"></script>
 	<script src="app/shared/newsfull/newsfullDirective.js"></script>
 	<script src="app/shared/navbar/navbarDirective.js"></script>
+	<script src="app/shared/footer/footerDirective.js"></script>
+	<script src="app/components/voiceform/voiceformDirective.js"></script>
+	<script src="app/components/voice/voiceController.js"></script>
 	<script src="app/components/review/reviewController.js"></script>
+	<script src="app/components/reports/reportsDirective.js"></script>
+	<script src="app/components/photoAlbumServices/PhotoAlbumServices.js"></script>
 	<script src="app/components/newsfull/newsfullController.js"></script>
 	<script src="app/components/news/newsDirective.js"></script>
 	<script src="app/components/menu/menuDirective.js"></script>

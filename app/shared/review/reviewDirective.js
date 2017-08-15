@@ -8,35 +8,26 @@ var app = angular.module('resto');
       },
       controller: ["$firebaseObject", "$firebaseArray", '$scope', function($firebaseObject, $firebaseArray, $scope){
         var self = this;
+        self.user = $scope.$parent.$parent.$parent.firebaseUser;
         self.data;
         var ref = firebase.database().ref();
-        console.log(ref);
         var obj = $firebaseObject(ref.child("menu_items").child($scope.review));
         var reviews = $firebaseArray(ref.child("menu_items").child($scope.review).child("reviews"));
-        console.log(obj);
         obj.$loaded().then(function() {
-          self.data = obj;
-          console.log(self.data)     
+          self.data = obj;  
         });
         $scope.$on('addReview', function(event, args){   //ловит событие (отправку отзыва)
-          console.log(args);
-          console.log($scope.$parent.$parent.$parent.firebaseUser.uid);
           var o = {};
-          o[reviews.length] = {
+          o = {
             rank: args.rank,
             headline: args.headline,
             review: args.text,
-            uid: $scope.$parent.$parent.$parent.firebaseUser.uid
-          };
-          reviews.$add(o);
-          reviews.$save().then(function(ref) {
-            console.log("success");
-          }, function(error) {
-              console.log(error);
-          })
+            uid: self.user.uid
+          }; 
+          ref.child("menu_items").child($scope.review).child("reviews").child(reviews.length).set(o);
         });
-
       }],
       controllerAs: "rewCtrl"
   	}
   });
+  

@@ -5,7 +5,6 @@
 		.container;
 	}
 	&-headline {
-		.cleartitle;
 		.boldfont;
 		text-transform: uppercase;
 		color: #343434;
@@ -13,11 +12,27 @@
 
 	&-list {
 		display: flex;
-		justify-content: space-between;
+		flex-wrap: wrap;
+		justify-content: center;
 	}
 
-	&-item-info {
-		.mainfont;
+	&-item {
+		aligh-items: center;
+		margin-left: 10px;
+		margin-right: 10px;
+		&-info {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		&-info__name {
+			.mainfont;
+			.cleartitle;
+			color: #343434;
+		}
+		&-info__link {
+			text-decoration: none;
+		}
+		
 	}
 }
-
