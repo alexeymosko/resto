@@ -1,0 +1,13 @@
+<div class = "gallery-container">
+	<h2 class = "gallery-headline">The Gallery</h2>
+	<div class = "gallery-pics">
+		<div class = "gallery-pics-main" ng-style = "{'background-image':'url(' + galleryCtrl.main + ')'}">
+		</div>
+		<div class = "gallery-pics-block">
+			<div class = "gallery-pics-block-item" ng-repeat = "item in galleryCtrl.list track by $index" ng-style = "{'background-image':'url(' + item + ')'}">
+			</div>
+		</div>
+	</div>
+
+</div>
+ 

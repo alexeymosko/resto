@@ -15,8 +15,7 @@ var app = angular.module('resto');
                 return sum + el.rank;
               }, 0) / el.reviews.length);
             return el;
-          });
-          console.log(self.dishes);        
+          });        
         });
       }], controllerAs: "featuredCtrl"
     }

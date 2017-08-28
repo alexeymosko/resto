@@ -1,7 +1,7 @@
 ;(function() {
 "use strict";
 
-var photoAlbumServices = angular.module('photoAlbumServices', ['ngResource', 'cloudinary']);
+var photoAlbumServices = angular.module('resto');
 photoAlbumServices.factory('album', ['$rootScope', '$resource', 'cloudinary',
   function($rootScope, $resource, cloudinary){
     // instead of maintaining the list of images, we rely on the 'myphotoalbum' tag

@@ -1,0 +1,21 @@
+<footer class = "footer">
+	<div class = "footer-container">
+		<div class = "footer-container-column" ng-repeat = "item in footerCtrl.addresses track by $index">
+			<div class = "footer-container-column-row-row">{{item.name}}</div>
+			<div class = "footer-container-column-row-row">{{item.street}}</div>
+			<div class = "footer-container-column-row-row">{{item.city}}</div>
+			<div class = "footer-container-column-row-row">{{item.telephone}}</div>
+		</div>
+		<div class = "footer-container-column">
+			<div class = "footer-container-column-row">Blog</div>
+			<div class = "footer-container-column-row">Careers</div>
+			<div class = "footer-container-column-row">Privacy policy</div>
+			<div class = "footer-container-column-row">Contact</div>
+		</div>
+		<div class = "footer-container-column">
+			<a class = "footer-logo" ui-sref="home"></a>
+			<p>All rights reserved <span>{{footerCtrl.year}}</span></p>
+		</div>
+	</div>
+
+</footer>
